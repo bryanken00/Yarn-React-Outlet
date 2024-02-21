@@ -1,10 +1,23 @@
-import { useOutletContext } from "react-router-dom"
-const HomePage = () => {
+import { useEffect, useRef, useState } from "react"
 
-  const { test } = useOutletContext()
-    return (
+const HomePage = () => {
+  const [count, setCount] = useState(0)
+  const HandleIncrement = () => setCount(count + 1)
+
+  const buttonRef = useRef(null)
+  const inputRef = useRef(null)
+
+  useEffect(() => {
+    if(buttonRef.current){
+      console.log("Elements: ", buttonRef.current)
+    }
+  }, []
+  )
+  
+  return (
       <div className="HomePage">
-        This is Home Page context: {test}
+        Count {count}
+        <button ref={buttonRef} onClick={HandleIncrement}>Increment</button>
       </div>
     )
   }

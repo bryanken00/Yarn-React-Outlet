@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import { useOutletContext } from 'react-router-dom';
 
 const LinkPage = ({value}) => {
 
@@ -16,7 +15,6 @@ const LinkPage = ({value}) => {
   return (linkElement);
 }
 const CarsPage = () => {
-  const {test2} = useOutletContext();
     return (
       <div className="CarsPage" style={{display: 'grid'}}>
         <LinkPage value="add"/>
@@ -25,7 +23,6 @@ const CarsPage = () => {
         <LinkPage value="3"/>
         <LinkPage value="4"/>
         <LinkPage value="5"/>
-        context: {test2}
       </div>
     )
   }
