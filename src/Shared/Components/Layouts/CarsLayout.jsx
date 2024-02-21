@@ -7,7 +7,7 @@ const CarsLayout = () => {
     return (
       <div className="CarsLayout">
         <div>THIS IS CAR LAYOUT</div>
-        <Outlet />
+        <Outlet context={{ test2: 'test2' }}/>
         <div>THIS IS CAR FOOTER</div>
       </div>
     )
